@@ -13,11 +13,13 @@ RUN apt-get update && \
       cd vim && \
       ./configure \
           --with-features=huge \
-          --enable-pythoninterp \
           --enable-rubyinterp \
           --enable-luainterp \
           --enable-perlinterp \
+          --enable-pythoninterp \
           --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ \
+          --enable-python3interp=yes \
+          --with-python3-config-dir=/usr/lib/python3.8/config-3.8-x86_64-linux-gnu/ \
           --enable-gui=gtk2 \
           --enable-cscope --prefix=/usr && \
       make && \
