@@ -26,6 +26,9 @@ RUN apt-get update && \
       rm -rf vim && \
       vim -es -u .vimrc -i NONE -c "PlugInstall" -c "qa" -V && \
       cd /root/.vim/plugged/YouCompleteMe && \
-      python3 install.py --all
+      python3 install.py --all && \
+      apt-get autoclean && \
+      apt-get clean && \
+      apt-get autoremove
 
 
